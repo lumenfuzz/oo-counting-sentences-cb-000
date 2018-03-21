@@ -23,6 +23,7 @@ class String
       else
         i += 1
       end
+    end
       return i
   end
 end
