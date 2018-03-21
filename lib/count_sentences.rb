@@ -15,6 +15,14 @@ class String
   end
 
   def count_sentences
-    self.gsub(/[.?!]/, '\0|')
+    sentence_array = self.gsub(/[.?!]/, '\0|')
+    i = 0
+    sentence_array.each do |sentence|
+      if sentence == "." || sentence == "?" || sentence == "!"
+        #this is not a sentence!
+      else
+        i += 1
+      end
+      return i
   end
 end
