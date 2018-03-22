@@ -15,7 +15,7 @@ class String
   end
 
   def count_sentences
-    sentence_array = self.gsub(/[.?!]/, '\0|')
+    sentence_array = self.scan(/[^\.!?]+[\.!?]/).map(&:strip)
     i = 0
     sentence_array.each do |sentence|
       if sentence == "." || sentence == "?" || sentence == "!"
